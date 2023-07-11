@@ -1,9 +1,17 @@
 function hasTargetSum(array, target) {
-  // Write your algorithm here
+  // iterate through each number in array
+  for(let i = 0; i < array.length; i++) {
+    // identify a remainder that remains after target - array[i]
+    const remainder = target - array[i]
+    // iterate through the rest of array
+    for(let j = i + 1; j < array.length; j++) {
+      if(array[j] === remainder) return true
+    }
+  }
+  return false
 }
-
 /* 
-  Write the Big O time complexity of your function here
+  0(n * 2)
 */
 
 /* 
